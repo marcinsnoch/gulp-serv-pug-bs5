@@ -1,0 +1,22 @@
+include includes/mixins.pug
+doctype html
+html(lang="pl")
+    head
+        +head('Oferta','Opis strony')
+    body
+        header#page-header
+            - const menuList = []
+            - menuList.push(['Strona głowna', '/'])
+            - menuList.push(['Oferta', '/offer.html'])
+            - menuList.push(['Realizacje', '/service.html', true])
+            - menuList.push(['Kontakt', '/contact.html'])
+            +navbar(menuList, style={'background-color': '#e3f2fd'}).nav.navbar.navbar-expand-lg.navbar-light
+        main#main-content
+            .container
+                .row
+                    .col-md-9.py-4
+                        h2.pt-4 Tytuł
+                        p.py-4.text-justify Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, quod, dolorem quae a fuga consectetur odit eaque rem ex quibusdam quis iste. Amet, omnis animi autem itaque placeat similique repellendus.
+                    .col-md-3.py-4
+                        include partials/sidebar.pug
+        include partials/footer.pug

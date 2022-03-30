@@ -1,0 +1,19 @@
+form.mb-4(method="GET")
+    .input-group
+        input.form-control(type="text", placeholder="Szukaj...", name="s", title="Szukaj:")
+        .input-group-append
+            button.btn.btn-outline-secondary(type="submit")
+                i.fa.fa-search
+
+h4.widget-title Menu
+.mb-4
+    - const sideMenu = []
+    - sideMenu.push(['Strona główna', '/'])
+    - sideMenu.push(['Oferta', '/offer.html'])
+    - sideMenu.push(['Realizacje', '/service.html'])
+    - sideMenu.push(['Kontakt', '/contact.html'])
+    +nav(sideMenu).nav.flex-column.nav-pills
+
+h4.widget-title Tytuł
+.mb-4
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta eius laborum sit dicta suscipit alias fuga magni! Fuga, doloremque, voluptate, a, nobis possimus voluptates eum quia esse eveniet illo suscipit.

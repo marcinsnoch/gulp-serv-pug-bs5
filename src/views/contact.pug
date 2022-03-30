@@ -1,0 +1,39 @@
+include includes/mixins.pug
+doctype html
+html(lang="pl")
+    head
+        +head('Oferta','Opis strony')
+    body
+        header#page-header
+            - const menuList = []
+            - menuList.push(['Strona głowna', '/'])
+            - menuList.push(['Oferta', '/offer.html'])
+            - menuList.push(['Realizacje', '/service.html'])
+            - menuList.push(['Kontakt', '/contact.html', true])
+            +navbar(menuList).nav.navbar.navbar-expand-lg.navbar-dark.bg-black.shadow
+        main#main-content
+            .container
+                .row
+                    .col-md-9.py-4
+                        h4.mb-3 Contact form
+                        form#contactForm.needs-validation(method="POST")
+                            .form-group
+                                label(for="fullName") Full name
+                                input#fullName.form-control(type="text", name="full_name", required)
+                            .form-group
+                                label(for="userEmail") Email
+                                input#userEmail.form-control(type="email", name="user_email", required)
+                            .form-group
+                                label(for="country") Country
+                                select.form-control(name="country", required)
+                                    option(value="")
+                                    option Poland
+                                    option United States
+                            .form-group
+                                label(for="validationTextarea") Message
+                                textarea.form-control(name="message", rows="3" required)
+                            hr.mb-4
+                            button.btn.btn-primary Send
+                    .col-md-3.py-4
+                        include partials/sidebar.pug
+        include partials/footer.pug

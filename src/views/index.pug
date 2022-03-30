@@ -1,0 +1,66 @@
+include includes/mixins.pug
+doctype html
+html(lang="pl")
+    head
+        +head('Strona główna','Opis strony')
+    body
+        header#page-header
+            - const menuList = []
+            - menuList.push(['Strona głowna', '/', true])
+            - menuList.push(['Oferta', '/offer.html'])
+            - menuList.push(['Realizacje', '/service.html'])
+            - menuList.push(['Kontakt', '/contact.html'])
+            +navbar(menuList).nav.navbar.navbar-expand-lg.navbar-light.bg-white.shadow-sm
+        main#main-content
+            .container
+                .row
+                    .col-md-9.py-4
+                        h4.mb-3 Billing address
+                        form#myForm(method="POST")
+                            .row
+                                .col-md-6.mb-3
+                                    label(for="firstName") First name
+                                    input.form-control(type="text", name="first_name", required)
+                                .col-md-6.mb-3
+                                    label(for="lastName") Last name
+                                    input.form-control(type="text", name="last_name", required)
+                            .mb-3
+                                label(for="username") Username
+                                .input-group
+                                    .input-group-prepend
+                                        span.input-group-text @
+                                    input.form-control(type="text", name="username", required)
+                            .mb-3
+                                label(for="email")
+                                    | Email
+                                    span.text-muted (Optional)
+                                input.form-control(type="email", name="email", required)
+                            .mb-3
+                                label(for="address") Address
+                                input.form-control(type="text", name="address", required)
+                            .mb-3
+                                label(for="address2")
+                                    | Address 2
+                                    span.text-muted (Optional)
+                                input.form-control(type="text", name="address2")
+                            .row
+                                .col-md-5.mb-3
+                                    label(for="country") Country
+                                    select.form-control(name="country", required)
+                                        option(value="") Choose...
+                                        option United States
+                                .col-md-4.mb-3
+                                    label(for="state") State
+                                    select.form-control(name="state", required)
+                                        option(value="") Choose...
+                                        option California
+                                .col-md-3.mb-3
+                                    label(for="zip") Zip
+                                    input.form-control(type="text", name="zip", required)
+                            hr.mb-4
+                            button.btn.btn-primary.btn-lg.btn-block(type="submit")
+                                i.fa.fa-home
+                                | Test
+                    .col-md-3.py-4
+                        include partials/sidebar.pug
+        include partials/footer.pug
