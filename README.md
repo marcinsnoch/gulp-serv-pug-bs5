@@ -1,18 +1,21 @@
-GULP Starter
+# GULP Starter
 
-Gulp, Pug, Sass, Browser Syn
+Gulp, Pug, Sass, Browser Sync, Bootstrap 5
 
 Install
+
 ```bash
 npm install
 ```
 
 Start
+
 ```bash
-gulp
+npm run build
 ```
 
 Dev
+
 ```bash
-gulp watch
+npm run dev
 ```

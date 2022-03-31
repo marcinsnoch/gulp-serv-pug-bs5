@@ -2,7 +2,7 @@
     "name": "gulp-serv-pug-bs5",
     "version": "1.0.0",
     "main": "gulpfile.js",
-    "repository": "https://github.com/marcinsnoch/gulp-serv-pug-bs5.git",
+    "repository": "https://github.com/marcinsnoch/gulp-serv-pug-bs5",
     "license": "MIT",
     "scripts": {
         "build": "gulp",
